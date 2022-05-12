@@ -2,34 +2,37 @@
 //
 // Created by Devin Jhu
 // Created on May 2022
-// The loop adder
+// The loop string
 
 #include <iostream>
+#include <string>
+
 
 int main() {
-    // this program shows the sum of all numbers from 0 to number
+    // this program shows the string of number entered
     std::string intNumber;
     int number;
-    int sum = 0;
-    int counter = 0;
-
+    int counter = 1;
+    std::string string;
 
     // input
-    std::cout << "Enter number (integer): ";
+    std::cout << "enter number: ";
     std::cin >> intNumber;
-    std::cout << std::endl;
+    std::cout << "enter string: ";
+    std::cin >> string;
 
     // process & output
     try {
         number = std::stoi(intNumber);
-        while (counter < number) {
-            counter = counter + 1;
-            sum = sum + counter;
+          if (number <= 0) {
+            std::cout << "not a positive number" << std::endl;
+        } else {
+            for (int counter = 1; counter < number + 1; counter++) {
+                std::cout << string;
+            }
         }
-        std::cout << "The sum of numbers to "
-        << number << " is " << sum << std::endl;
     } catch (std::invalid_argument) {
-        std::cout << "Not an integer";
+        std::cout << "not a number" << std::endl;
     }
     std::cout << "\nDone." << std::endl;
 }
